@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <title> dark or light</title>
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+            
+        .slider.round {
+            border-radius: 34px;
+        }
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        .switch{
+            margin-left:48%;
+            margin-top:1%;
+
+        }
+        .bod{
+            background-color:light;
+        }
+        #tx{
+            display: inline;
+            margin-top: 1%;
+            margin-left: 49%;
+            padding-top: 2%;
+        }
+        #dark{
+            display: inline;
+            
+        }
+        #light{
+            
+        position: absolute;
+        left: -50px;
+        bottom: 10px;
+        margin: 0;
+        }
+        
+        
+    </style>
+</head>
+<body class="body">
+    <p id="tx">Mode</p>
+    
+
+    <label class="switch">
+        
+        <p id="light">Light</p>
+        <input onchange=check(this) type="checkbox" >
+        <span  class="slider round"></span>
+    </label>
+    <p id="dark">Dark</p>
+    
+    
+<script>
+    function check(ps) {
+       
+       
+        if(ps.checked){
+            $(".body").css("background-color","black");
+            $("#tx").css("color","white");
+            $("#light").css("color","white");
+            $("#dark").css("color","white");
+        }
+        else{
+            $(".body").css("background-color","white");
+            $("#tx").css("color","black");
+            $("#light").css("color","black");
+            $("#dark").css("color","black");
+        }
+        
+        
+    }    
+        
+        
+       
+    
+    
+</script>
+</body>
+</html>
